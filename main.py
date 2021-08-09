@@ -1,15 +1,11 @@
+# Import FastAPI and Utilities
+from fastapi import FastAPI
 from typing import Optional
 
-from fastapi import FastAPI
-
+# Create FastAPI app
 app = FastAPI()
 
-
-@app.get("/")
+# Synchronous API To Return a Json Response
+@app.get("/hello")
 def read_root():
-    return {"Hello": "World"}
-
-
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Optional[str] = None):
-    return {"item_id": item_id, "q": q}
+    return {"Hello": "FastAPI"}
